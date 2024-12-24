@@ -3,7 +3,7 @@ clc
 
 addpath(genpath('./'))
 
-load('scene.mat')
+load('ORL.mat')
 m = length(X);
 c = length(unique(Y));
 
@@ -22,7 +22,8 @@ G = generate_graph(X, k);
 
 alpha=[1e3];
 % beta=1;
-beta=[1e-3, 1e-2, 1e-1, 1, 1e1, 1e2,1e3];
+% beta=[1e-3, 1e-2, 1e-1, 1, 1e1, 1e2,1e3];
+beta=[1e-3];
 % mu=1;
 mu=[0.001];
 
@@ -32,7 +33,7 @@ end
 for i=1:length(alpha)
     for j=1:length(beta)
         disp('Start running the EPLMSC algorithm...');
-        [label,obj]=EPLMSC(G,X,F,c,alpha(i),beta(j),mu);
+        [label]=EPLMSC(G,X,F,c,alpha(i),beta(j),mu);
 
         result(j,:) = ClusteringMeasure(Y,label);
 %         disp(['beta = ',num2str(beta(i)),'  Para2 = ',num2str(mu(j)), '  ACC = ', num2str(result(:,1))]);
