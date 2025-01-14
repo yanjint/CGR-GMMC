@@ -1,4 +1,4 @@
-function   q = solveq(A,W)
+function   q = solveq(A,W,mu)
 
 m= length(A);
 
@@ -7,7 +7,7 @@ q=zeros(1,m);
 sum_sqr = 0;
 
 for i=1:m
-    r(i)=norm(W*W'-A{i},'fro')^2;
+    r(i)=mu*norm(W*W'-A{i},'fro')^2;
     sum_sqr = sum_sqr+r(i)*r(i);
 end
 

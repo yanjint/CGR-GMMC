@@ -20,10 +20,10 @@ k=9;
 G = generate_graph(X, k);
 [F, ~, ~] = prepare(G, c);
 
-alpha=[1e3];
+% alpha=[1e3];
 % beta=1;
-beta=[1e-3, 1e-2, 1e-1, 1, 1e1, 1e2,1e3];
-% beta=[1e-3];
+% beta=[1e-3, 1e-2, 1e-1, 1, 1e1, 1e2,1e3];
+beta=[1e-3];
 % mu=1;
 mu=[0.001];
 

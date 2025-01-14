@@ -36,10 +36,10 @@ for it=1:50
     E =solveE(X,A,beta);
         
     %------------- update A -------------
-    A=solveA(X,q,alpha,E,W);
+    A=solveA(X,q,alpha,E,W,mu);
     
     %     %------------- update q -------------
-     q =solveq(A,W);
+     q =solveq(A,W,mu);
     
       %------------- update W -------------
     W =solveW(A,mu,K0,q,c);
