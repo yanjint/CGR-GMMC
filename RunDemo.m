@@ -29,7 +29,7 @@ for i=1:m
 end
 for i=1:length(alpha)
     for j=1:length(beta)
-        disp('Start running the EPLMSC algorithm...');
+        disp('Start running the algorithm...');
         [label]=main(G,X,F,c,alpha(i),beta(j),mu);
 
         result(j,:) = ClusteringMeasure(Y,label);
