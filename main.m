@@ -1,13 +1,13 @@
-function [label]=EPLMSC(G,X,F,c,alpha,beta,mu)
+function [label]=main(G,X,F,c,alpha,beta,mu)
 
-% disp('Start running the EPLMSC algorithm...');
+% disp('Start running the algorithm...');
 
 
 
-%获取视图数目
+%view
 m = length(X);
 
-%获取样本数
+%samples
 n = size(X{1},2);
 
 %% init W
@@ -30,7 +30,7 @@ for i = 1:m
     K0 = K0 +F{i} * F{i}';
 end
 
-for it=1:50
+for it=1:20
     fprintf('----Iteration-----%d\n',it);
     %------------- update E -------------
     E =solveE(X,A,beta);
